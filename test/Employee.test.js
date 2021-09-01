@@ -7,4 +7,7 @@ it("Testing Employee OBj", () => {
     const mockEmployee = new Employee("dog","1","dog@dog.com");
 
     expect(mockEmployee.getName()).toBe("dog");
+    expect(mockEmployee.getId()).toBe("1");
+    expect(mockEmployee.getEmail()).toBe("dog@dog.com");
+    expect(mockEmployee.getRole()).toBe("Employee");
 });

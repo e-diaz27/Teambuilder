@@ -3,11 +3,8 @@ const fs = require('fs');
 const util = require('util');
 const path = require('path');
 const Manager = require("./lib/Manager");
-const Employee = require("./lib/Employee");
+const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-
-// create writeFile function using promises instead of a callback function
-const writeFileAsync = util.promisify(fs.writeFile);
 
 // How do I make the prompt run indefinitely until the user wants me to stop?
 
@@ -172,7 +169,7 @@ const endGame = () => {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Team</title>
 </head>
 <body>
     ${template}
@@ -181,7 +178,7 @@ const endGame = () => {
   `;
 
 
-  fs.writeFileAsync(path.join(__dirname,'/teams.html'), finalhtml)
+  fs.writeFileSync(path.join(__dirname,'/teams.html'), finalhtml)
 }
 
 const addMember = () => {
